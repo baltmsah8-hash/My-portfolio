@@ -216,7 +216,7 @@ main #home .div1 h3 .span1::first-letter{
 }
 
 main #home .div1 h3 .span2 {
-  width: 20ch;
+  width: 18ch;
   border-right: 2px solid #C9C9C9;
   display: flex;
   align-items: center;
