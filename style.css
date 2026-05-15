@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*variables*/
+
+:root {
+  --background1: #2C2D41;
+  --background2: #171821;
+  --text-color1: #FFF;
+  --text-color2: #06F5FD;
+  --text-color3: rgba(255, 255, 255, 0.8);
+  --shadow: 0px 0px 10px rgba(0, 255, 236, 1);
+  --shadow2: 0 0 10px rgba(66, 68, 90, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', Sans-Serif;
+  font-weight: bold;
+  background-color: var(--background1);
+  color: var(--text-color1);
+  letter-spacing: 0.3px;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  color: var(--text-color3);
+}
+
+/*Uniform style for buttons*/
+
+.button {
+  height: 2rem;
+  width: 12rem;
+  margin: 5px 0px;
+  border: none;
+  border-radius: 24px;
+  background-color: var(--text-color2);
+  box-shadow: var(--shadow);
+  font-size: 15px;
+  font-weight: bold;
+  transition: 1s ease;
+}
+
+.button:hover {
+  box-shadow: none;
+}
+
+/*this is start header*/
+
+header {
+  height: 50px;
+  width: 90%;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+header nav {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header nav ul li:first-child {
+  border-bottom: 1px solid var(--text-color2);
+  color: var(--text-color2);
+}
+
+header nav ul li:hover {
+  color: var(--text-color2);
+  border-bottom: 1px solid var(--text-color2);
+}
+
+/*this style for icon menu*/
+
+header nav .menu {
+  display: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+header nav .menu span {
+  display: none;
+  width: 90%;
+  height: 4px;
+  border-radius: 5px;
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+    display: none;
+  }
+  header nav .menu{
+    display: flex;
+    position: absolute;
+    right: 5px;
+  }
+  header nav .menu:hover + ul,
+  header nav ul:hover {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    padding: 30px 10px;
+    border-radius: 30px 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  header nav .menu span {
+    display: block;
+    transition: all 1s ease;
+  }
+}
+
+/*start section home*/
+
+main #home {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  main #home {
+    flex-direction: column;
+  }
+}
+
+main #home .div1{
+  height: 45rem;
+  width: 24rem;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  main #home .div1 {
+    width: auto;
+  }
+}
+
+main #home .div1 h3 {
+  font-size: 20px;
+}
+
+main #home .div1 h3 .span1 {
+  display: block;
+  position: relative;
+  font-size: 40px;
+}
+
+main #home .div1 h3 .span1::first-letter{
+  text-transform: uppercase;
+  color: var(--text-color2);
+}
+
+main #home .div1 h3 .span2 {
+  width: 20ch;
+  border-right: 2px solid #C9C9C9;
+  display: flex;
+  align-items: center;
+  color: var(--text-color2);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: writer 2s 0.3s infinite alternate;
+}
+
+@keyframes writer {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width:18ch;
+  }
+}
+
+main #home .div1 p {
+  font-size: 16px;
+}
+
+main #home .div1 .icon {
+  width: 15rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+main #home .div1 a {
+  height: 40px;
+  width: 40px;
+  margin: 5px 0px;
+  border: 1px solid var(--text-color2);
+  border-radius: 50%;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--text-color2);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: 1s ease;
+}
+
+main #home .div1 a:hover {
+  box-shadow: none;
+}
+
+main #home .div2 {
+  height: 45rem;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main #home .div2 div {
+  height: 18rem;
+  width: 18rem;
+  position: relative;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(var(--shadow));
+  animation: jump 2s infinite alternate;
+}
+
+@keyframes jump {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: -5%;
+  }
+}
+
+main #home .div2 div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--text-color2);
+  clip-path: polygon(0 21%, 50% 0, 100% 21%, 100% 79%, 50% 100%, 0 79%);
+  z-index: -1;
+}
+
+main #home .div2 div span {
+  display: block;
+  font-size: 30px;
+}
+
+/*end section home*/
+/*start section about*/
+
+main #about {
+  height: 50vh;
+  width: auto;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--background2);
+  box-shadow: var(--shadow2);
+}
+
+main #about .container h3 {
+  font-size: 20px;
+}
+
+main #about .container h3 span {
+  display: inline-block;
+  color: var(--text-color2);
+  font-size: 30px;
+}
+
+/*end section about*/
+/*start section services*/
+
+main #service {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main #service h2 span {
+  color: var(--text-color2);
+}
+
+main #service .parent{
+  width: 100%;
+  padding: 20px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+
+main #service .parent .card {
+  height: fit-content;
+  width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: var(--shadow2);
+  transition: 1s ease;
+}
+
+main #service .parent .card:hover {
+  border: 2px solid var(--text-color2);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  main #service .parent {
+    flex-direction: column;
+  }
+  main #service .parent .card {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+main #service .parent .card i {
+  font-size: 40px;
+  color: var(--text-color2);
+}
+
+
+main #service .parent .card .button {
+  margin: 10px auto;
+}
+
+/*end section services*/
+/*start section portfolo*/
+
+main #portfolio {
+  min-height: 50vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--background2);
+}
+
+main #portfolio h2 span {
+  color: var(--text-color2);
+}
+
+main #portfolio .parent {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+main #portfolio .parent .card {
+  height: 250px;
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  main #portfolio .parent {
+    flex-direction: column;
+  }
+  main #portfolio .parent .card {
+    width: 90%;
+    margin: 20px auto;
+  }
+}
+
+
+main #portfolio .parent .card img {
+  height: 100%;
+  width: 100%;
+}
+
+main #portfolio .parent .card .content {
+  height: 100%;
+  width: 100%;
+  padding: 20px 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0, 253, 255, 0.6), rgba(0, 0, 0, 0.2));
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+main #portfolio .parent .card:hover .content {
+  top: 0%;
+}
+
+main #portfolio .parent .card .content button {
+  height: 35px;
+  width: 35px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 50%;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+main #portfolio .parent .card .content button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 15px;
+  width: 15px;
+  border-top: 4px solid #fff;
+  border-right: 4px solid #fff;
+  border-radius: 2px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/*end section portfilo*/
+/*start section contact*/
+
+main #contact {
+  min-height: 50vh;
+  width: 100%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+main #contact h2 span {
+  color: var(--text-color2);
+}
+
+main #contact form {
+  width: 100%;
+  text-align: center;
+}
+
+main #contact form div input, textarea {
+  padding: 15px;
+  border: 1px solid #000;
+  outline: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+main #contact form div input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+main #contact form div input[type="name"],
+main #contact form div input[type="email"] {
+  width: 40%;
+}
+
+main #contact form div input[type="number"] {
+  width: 80%;
+  margin: 10px auto;
+}
+
+main #contact form div textarea {
+  height: 200px;
+  width: 80%;
+}
+
+/*end section contact*/
+/*start footer*/
+
+footer {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background2);
+}
+
+footer p a {
+  color: var(--text-color2);
+  text-decoration: none;
+}
