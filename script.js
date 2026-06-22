@@ -5,8 +5,8 @@ let lis = document.querySelectorAll('ul li');
 lis.forEach(li => {
   li.onclick = e => {
     if (e.target.tagName === 'A') {
-      document.querySelector('ul li.active')?.classList.remove('active');
-      li.target.classList.add('active');
+      document.querySelector('ul li .active')?.classList.remove('active');
+      e.target.classList.add('active');
      };
   };
 });
